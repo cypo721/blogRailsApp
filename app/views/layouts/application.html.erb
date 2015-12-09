@@ -1,14 +1,64 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>BlogApp</title>
+  <title>Blog</title>
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+  <%= stylesheet_link_tag 'application', 'http://fonts.googleapis.com/css?family=Raleway:400,700' %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
 </head>
 <body>
+	<div id="sidebar">
+		<div id="logo">
+			<%= link_to root_path do %>
+				<%= image_tag("logo.svg", size: "33x33")%>
+			<% end %>
+		</div>
 
-<%= yield %>
+		<ul>
+			<li class="category">Website</li>
+			<li><%= link_to "Blog", root_path %></li>
+			<li><%= link_to "About", about_path %></li>
+		</ul>
 
+		<ul>
+			<li class="category">Social</li>
+			<li><a href="https://github.com/cypo721">Github</a></li>
+		</ul>
+    	<% if !user_signed_in? %>
+			  <p class="sign_in"><%= link_to "Login", new_user_session_path %></p> <br>
+        <p class="sign_up"><%= link_to "Sing up", new_user_registration_path %></p>
+      <% else %>
+        <p class="sign_in">Logged as <%= current_user.email %></p>
+      <% end %>
+	</div>
+
+	<div id="main_content">
+		<div id="header">
+      <% if current_page?(root_path) %>
+				<p>All Posts</p>
+			<% elsif current_page?(about_path) %>
+				<p>About</p>
+			<% else %>
+				<%= link_to "Back to All Posts", root_path %>
+			<% end %>
+
+			<% if user_signed_in? %>
+				<div class="buttons">
+          <% if current_user.has_role? :superuser %>
+          <a class="button" href="/list_users">List of users</a>
+          <% end %>
+					<a class="button" href="/posts/new">New post</a>
+					<a class="button" data-method="delete" href="/users/sign_out">Log out</a>
+				</div>
+      <% end %>
+		</div>
+
+		<% flash.each do |name, msg| %>
+			<%= content_tag(:div, msg, class: "alert") %>
+		<% end %>
+
+		<%= yield %>
+	</div>
 </body>
 </html>
