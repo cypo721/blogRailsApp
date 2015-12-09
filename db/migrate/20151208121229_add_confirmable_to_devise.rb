@@ -10,7 +10,7 @@ class AddConfirmableToDevise < ActiveRecord::Migration
      # To avoid a short time window between running the migration and updating all existing
      # users as confirmed, do the following
      # PRODUCTION - DATETIME('now') maybe invalid
-     execute("UPDATE users SET confirmed_at = DATETIME('now')")
+     execute("UPDATE users SET confirmed_at = NOW()")
      # All existing user accounts should be able to log in after this.
      # Remind: Rails using SQLite as default. And SQLite has no such function :NOW.
      # Use :date('now') instead of :NOW when using SQLite.
