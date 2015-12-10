@@ -8,11 +8,11 @@ Rails.application.configure do
     :sender_address => %{"notifier" <exception@herokuapp.com>},
     :exception_recipients => %w{cypo721@azet.sk}
   }
-
+  # smtp.mandrill.com
   config.action_mailer.smtp_settings = {
-  :address   => "smtp.sendgrid.com",
+  :address   => "smtp.mailgun.com",
   :port      => 587,
-  :domain    => 'heroku.com',
+  :domain    => 'mailgun.com',
   :user_name => ENV["MANDRILL_USERNAME"],
   :password  => ENV["MANDRILL_API_KEY"]
 }

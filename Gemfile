@@ -9,6 +9,7 @@ gem 'rolify'
 gem 'cancancan'
 
 gem 'figaro'
+gem 'paperclip'
 
 gem 'rubocop', require: false
 
