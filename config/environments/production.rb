@@ -9,6 +9,12 @@ Rails.application.configure do
     :exception_recipients => %w{cypo721@azet.sk}
   }
 
+  config.action_mailer.smtp_settings = {
+  :address   => "smtp.mandrillapp.com",
+  :port      => 25,
+  :user_name => ENV["MANDRILL_USERNAME"],
+  :password  => ENV["MANDRILL_API_KEY"]
+}
   # mailer
   config.action_mailer.delivery_method = :sendmail
   # Defaults to:

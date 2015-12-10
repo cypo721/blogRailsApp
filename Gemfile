@@ -8,6 +8,8 @@ gem 'devise'
 gem 'rolify'
 gem 'cancancan'
 
+gem 'figaro'
+
 gem 'rubocop', require: false
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'

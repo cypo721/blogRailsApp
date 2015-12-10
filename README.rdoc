@@ -16,7 +16,7 @@ Pro vývoj aplikace můžete použít gem rails_admin nebo standardní scaffolld
 <tt>rake doc:app</tt>.
 
 
-
+http://railsapps.github.io/rails-send-email.html
 
 Some setup you must do manually if you haven't yet:
 
