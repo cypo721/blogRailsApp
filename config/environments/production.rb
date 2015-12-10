@@ -5,7 +5,7 @@ Rails.application.configure do
   Rails.application.config.middleware.use ExceptionNotification::Rack,
   :email => {
     :email_prefix => "[BLOG APP] ",
-    :sender_address => %{"notifier" <rails-notifier@herouapp.com>},
+    :sender_address => %{"notifier" <exception@herouapp.com>},
     :exception_recipients => %w{cypo721@azet.sk}
   }
 
@@ -15,15 +15,19 @@ Rails.application.configure do
   :user_name => ENV["MANDRILL_USERNAME"],
   :password  => ENV["MANDRILL_API_KEY"]
 }
+config.action_mailer.default_url_options = { :host => 'herokuapp.com' }
+config.action_mailer.delivery_method = :smtp
+config.action_mailer.perform_deliveries = true
+config.action_mailer.raise_delivery_errors = false
   # mailer
-  config.action_mailer.delivery_method = :sendmail
+  # config.action_mailer.delivery_method = :sendmail
   # Defaults to:
   # config.action_mailer.sendmail_settings = {
   #   :location => '/usr/sbin/sendmail',
   #   :arguments => '-i -t'
   # }
-  config.action_mailer.perform_deliveries = true
-  config.action_mailer.raise_delivery_errors = true
+  # config.action_mailer.perform_deliveries = true
+  # config.action_mailer.raise_delivery_errors = true
 
   # Code is not reloaded between requests.
   config.cache_classes = true
