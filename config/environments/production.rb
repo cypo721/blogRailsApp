@@ -12,7 +12,7 @@ Rails.application.configure do
   config.action_mailer.smtp_settings = {
   :address   => "smtp.mailgun.com",
   :port      => 587,
-  :domain    => 'mailgun.com',
+  :domain    => 'sandbox6bf1e41d145f4d26af52fcf7fb5331bb.mailgun.org',
   :user_name => ENV["MANDRILL_USERNAME"],
   :password  => ENV["MANDRILL_API_KEY"]
 }
