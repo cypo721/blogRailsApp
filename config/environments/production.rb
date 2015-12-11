@@ -16,7 +16,7 @@ Rails.application.configure do
   :user_name => ENV["MANDRILL_USERNAME"],
   :password  => ENV["MANDRILL_API_KEY"]
 }
-config.action_mailer.default_url_options = { :host => 'herokuapp.com' }
+config.action_mailer.default_url_options = { :host => 'morning-waters-8051.herokuapp.com`' }
 config.action_mailer.delivery_method = :smtp
 config.action_mailer.perform_deliveries = true
 config.action_mailer.raise_delivery_errors = false
