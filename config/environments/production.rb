@@ -6,7 +6,7 @@ Rails.application.configure do
   :email => {
     :email_prefix => "[BLOG APP] ",
     :sender_address => %{"notifier" <exception@herokuapp.com>},
-    :exception_recipients => %w{cypo721@azet.sk}
+    :exception_recipients => %w{cyprian.patrik@gmail.com}
   }
   # smtp.mandrill.com
   config.action_mailer.smtp_settings = {
