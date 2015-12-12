@@ -3,8 +3,11 @@
 == Blog rails App
 
 [App on heroku](https://morning-waters-8051.herokuapp.com/)
+
 Superadmin credentials
+
 email: superuser@blogApp.com
+
 password: superuser
 
 
