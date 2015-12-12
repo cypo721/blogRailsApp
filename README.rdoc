@@ -4,10 +4,14 @@
 
 [App on heroku](https://morning-waters-8051.herokuapp.com/)
 Superadmin credentials
+
 email: superuser@blogApp.com
+
 password: superuser
 
+
 TASK:
+
 Vytvořte Ruby on Rails (RoR) aplikaci s využitím probíraných gemů:
 1. Výsledkem vaší práce bude jednoduchá blogovací platforma s použitím probíraných gemů.
 2. Vytvořte novou Rails aplikaci a nasaďte na ni exception_notification, pry, better_errors a web-console.
@@ -20,4 +24,5 @@ Vytvořte Ruby on Rails (RoR) aplikaci s využitím probíraných gemů:
 Pro vývoj aplikace můžete použít gem rails_admin nebo standardní scaffolld (slim, twitter-bootstrap-rails, simple_form)
 
 <tt>rake doc:app</tt>.
+
 http://railsapps.github.io/rails-send-email.html
