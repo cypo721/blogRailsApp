@@ -29,6 +29,7 @@
 			  <p class="sign_in"><%= link_to "Login", new_user_session_path %></p> <br>
         <p class="sign_up"><%= link_to "Sing up", new_user_registration_path %></p>
       <% else %>
+        <p class="avatar"> <%= link_to "/pages/edit_avatar" do %> <%= image_tag current_user.avatar, :class => "as" %> <% end %> </p>
         <p class="sign_in">Logged as <%= current_user.email %></p>
       <% end %>
 	</div>

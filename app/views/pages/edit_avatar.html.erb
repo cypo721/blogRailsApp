@@ -1,0 +1,8 @@
+<h2> Update profile avatar </h2>
+<div>
+  <br>
+  <%= form_for current_user  ,url: "update_avatar", html: { multipart: true } do |form| %>
+  <%= form.file_field :avatar %>
+  <%= form.submit %>
+<% end %>
+</div

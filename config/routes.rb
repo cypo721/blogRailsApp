@@ -4,6 +4,8 @@ Rails.application.routes.draw do
   get '/about', to: 'pages#about'
   get '/list_users', to: 'pages#list_users'
 
+  get '/pages/edit_avatar', to: 'pages#edit_avatar'
+  patch '/pages/update_avatar', to: 'pages#update_avatar'
   devise_for :users
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
