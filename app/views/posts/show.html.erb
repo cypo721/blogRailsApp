@@ -1,7 +1,7 @@
 <div id="post_content">
 	<h1 class="title"><%= @post.title %></h1>
 	<p class="date">
-		Autor : <%= User.find(@post.user_id).email %> <br>
+		Autor : <%= User.find(@post.user_id).email.split('@').first %> <br>
 		Submitted <%= time_ago_in_words(@post.created_at) %> Ago
 		<%-# if (user_signed_in? && current_user.has_role?(:superuser)) %>
 		| <%= link_to 'Edit', edit_post_path(@post) %> |
