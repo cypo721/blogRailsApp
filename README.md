@@ -4,7 +4,7 @@
 
 [App on heroku](https://morning-waters-8051.herokuapp.com/)
 
-Superadmin credentials
+Superadmin credentials:
 
 email: superuser@blogApp.com
 
@@ -26,4 +26,3 @@ Pro vývoj aplikace můžete použít gem rails_admin nebo standardní scaffolld
 
 <tt>rake doc:app</tt>.
 
-http://railsapps.github.io/rails-send-email.html
