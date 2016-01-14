@@ -1,5 +1,6 @@
 class PostsController < ApplicationController
   # before_action :authenticate_user!, except: [:index, :show]
+  load_and_authorize_resource
   def index
     @posts = Post.all.order('created_at DESC')
   end
@@ -24,7 +25,7 @@ class PostsController < ApplicationController
 
   def edit
     @post = Post.find(params[:id])
-    authorize! :edit, @post, :message => "Unable to manage this post. You are not author."
+    # authorize! :edit, @post, :message => "Unable to manage this post. You are not author."
   end
 
   def update
@@ -39,7 +40,7 @@ class PostsController < ApplicationController
 
   def destroy
     @post = Post.find(params[:id])
-    authorize! :edit, @post, :message => "Unable to manage this post. You are not author."
+    # authorize! :edit, @post, :message => "Unable to manage this post. You are not author."
     @post.destroy
 
     redirect_to posts_path

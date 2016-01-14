@@ -10,6 +10,7 @@ class Ability
     if user.has_role? :superuser
       can :manage, :all
     elsif user.has_role? :blogger
+      can :read, Post
       can :manage, Post, Post do |post|
         post.user_id == user.id
       end
